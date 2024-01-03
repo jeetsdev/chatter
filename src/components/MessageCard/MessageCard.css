@@ -1,0 +1,43 @@
+.message-card {
+    border-top: 2px dotted lightgrey;
+    display: flex;
+    padding: 15px 0;
+    margin: 10px 0;
+}
+
+.message-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.messages-data {
+    flex-grow: 1;
+}
+
+.messages-data div {
+    display: flex;
+    gap: 10px;
+    padding-left: 10px;
+}
+
+.messages-data p {
+    color: grey;
+}
+
+.messages-data .data-source {
+    font-weight: 600;
+    color: black;
+
+}
+
+.messages-data .delete-message {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.messages-data .data-text {
+    padding-left: 10px;
+    padding: 5px 0 0 10px;
+}
