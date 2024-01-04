@@ -1,7 +1,7 @@
 import axios, { AxiosResponse, CancelTokenSource } from "axios";
 import { Constants } from "../constants/constants";
 import axiosInstance from "../helpers/axiosInstance";
-import { IMessageDispatchType } from "../helpers/interface";
+import { IMessageDispatchType, IMessageType } from "../helpers/interface";
 import { Dispatch } from "react";
 import toast from "react-hot-toast";
 
@@ -84,5 +84,29 @@ export const deleteMessage = async (
 		}
 	} catch (error) {
 		toast.error("Failed to delete message");
+	}
+};
+export const deleteAllMessage = async (
+	messages: IMessageType[],
+	dispatch: Dispatch<IMessageDispatchType>,
+) => {
+	try {
+		const promises = [];
+		for (let i = 0; i < messages.length; i++) {
+			promises.push(
+				axiosInstance.delete(
+					`${Constants.MESSAGE_URL}/${messages[i].id}/`,
+				),
+			);
+		}
+		await Promise.all(promises);
+		dispatch({
+			type: "SET_CONFIRMATION_DIALOG",
+			payload: false,
+		});
+		getAllMessages(dispatch);
+		debugger;
+	} catch (error) {
+		throw new Error("Delete messages failed");
 	}
 };

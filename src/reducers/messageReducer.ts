@@ -1,3 +1,4 @@
+import { sortData } from "../helpers/helpers";
 import {
 	IMessageDispatchType,
 	IMessageContextType,
@@ -21,6 +22,17 @@ export const messageReducer = (
 			return {
 				...state,
 				messages: state.messages.splice(action.payload, 1),
+			};
+		case "SORT_MESSAGES":
+			return {
+				...state,
+				messages: sortData(state.messages, action.payload),
+			};
+		case "SET_CONFIRMATION_DIALOG":
+			console.log(action.payload);
+			return {
+				...state,
+				isConfirmationDialogOpen: action.payload,
 			};
 		default:
 			return state;

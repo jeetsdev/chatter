@@ -17,6 +17,7 @@ const messageData: IMessageContextType = {
 	status: "",
 	isLoading: false,
 	isPostLoading: false,
+	isConfirmationDialogOpen: false,
 };
 
 export const MessageContext = createContext<IMessageContextType>(messageData);

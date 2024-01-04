@@ -12,6 +12,7 @@ export interface IMessageContextType {
 	isLoading: boolean;
 	isPostLoading: boolean;
 	messageDispatch?: Dispatch<IMessageDispatchType>;
+	isConfirmationDialogOpen:boolean,
 }
 export interface IMessageDispatchType {
 	type: string;

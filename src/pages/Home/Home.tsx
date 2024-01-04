@@ -1,17 +1,21 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { MessageSection } from "../../components/components";
 import { useMessage } from "../../context/message_context";
 import { postMessage } from "../../services/messageServices";
 import toast from "react-hot-toast";
 import "./Home.css";
+import { ConfirmationDialog } from "../../components/ConfirmationDialog/ConfirmationDialog";
 
 export const Home = () => {
 	const userMessageRef = useRef<HTMLInputElement | null>(null);
-	const { isPostLoading, messageDispatch } = useMessage();
-	const [sortType, setSortType] = useState("NONE");
+	const { messages, isPostLoading, messageDispatch } = useMessage();
 
 	function handleSort(type: string) {
-		setSortType(type);
+		messageDispatch &&
+			messageDispatch({
+				type: "SORT_MESSAGES",
+				payload: type,
+			});
 	}
 
 	async function handlePost() {
@@ -33,6 +37,18 @@ export const Home = () => {
 		userMessageRef.current.value = "";
 	}
 
+	function handleDeleteAll() {
+		if (messages.length === 0) {
+			toast.error("No post to delete");
+			return;
+		}
+		messageDispatch &&
+			messageDispatch({
+				type: "SET_CONFIRMATION_DIALOG",
+				payload: true,
+			});
+	}
+
 	return (
 		<div className="main-home">
 			<h1>Chatter</h1>
@@ -43,24 +59,28 @@ export const Home = () => {
 			<button type="button" onClick={handlePost} disabled={isPostLoading}>
 				Post!
 			</button>
-			<button type="button" className="delete-btn">
+			<button
+				type="button"
+				className="delete-btn"
+				onClick={handleDeleteAll}
+			>
 				Delete All
 			</button>
+			<ConfirmationDialog />
 			<div className="sort-sec">
 				<label htmlFor="sort">Sort By:</label>
 				<select
 					name="sort"
 					id="sort"
-					onChange={(e) => {
-						console.log(e);
+					onChange={(opt) => {
+						handleSort(opt.target.value);
 					}}
 				>
-					<option value="RECENT">Recent</option>
 					<option value="FIRST_ADDED">First Added</option>
+					<option value="RECENT">Recent</option>
 				</select>
 			</div>
 			<MessageSection />
-			<p></p>
 		</div>
 	);
 };

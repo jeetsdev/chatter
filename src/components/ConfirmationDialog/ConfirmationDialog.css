@@ -1,0 +1,42 @@
+.delete-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.delete-dialog.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.delete-dialog p {
+    margin-bottom: 16px;
+}
+
+.button-container {
+    display: flex;
+}
+
+.delete-button,
+.cancel-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-button {
+    background-color: #ff4d4f;
+}
+
+.cancel-button {
+    background-color: #d9d9d9;
+}
