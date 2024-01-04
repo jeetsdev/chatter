@@ -5,7 +5,8 @@ Welcome to the React TypeScript Messaging App! This application provides a simpl
 ## Table of Contents
 
 - [Installation](#installation)
-- [Feature](#feature)
+- [Usage](#usage)
+- [Features](#features)
 
 ## Installation
 
@@ -27,7 +28,7 @@ To run this project locally, follow these steps:
     ```
     OR
     ```js
-    yarn
+    yarn;
     ```
 
 ## Usage
