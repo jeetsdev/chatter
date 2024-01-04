@@ -33,6 +33,7 @@ To run this project locally, follow these steps:
 
 ## Usage
 
+- Create `.env` file and add values of variables defined in `.env.example`.
 - Start the development server: `npm start` OR `yarn start`
 - Open the app in your browser: `http://localhost:5000`
 
