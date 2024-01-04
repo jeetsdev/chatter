@@ -22,7 +22,7 @@ export const ConfirmationDialog = () => {
 			}`}
 		>
 			<div className="dialog-content">
-				<p>Do you want to delete the post?</p>
+				<p>Are you sure you want to delete all post?</p>
 				<div className="button-container">
 					<button
 						onClick={() =>

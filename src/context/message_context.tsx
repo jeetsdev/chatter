@@ -14,7 +14,6 @@ type IProps = {
 
 const messageData: IMessageContextType = {
 	messages: [],
-	status: "",
 	isLoading: false,
 	isPostLoading: false,
 	isConfirmationDialogOpen: false,

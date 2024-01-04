@@ -42,9 +42,3 @@
 .sort-sec select {
     padding: 4px 0;
 }
-
-.sort-sec select option {
-    font-size: 1rem;
-    color: red;
-    background-color: green;
-}

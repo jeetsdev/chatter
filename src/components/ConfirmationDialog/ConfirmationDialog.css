@@ -25,18 +25,19 @@
     display: flex;
 }
 
-.delete-button,
-.cancel-button {
+.dialog-content .delete-button,
+.dialog-content .cancel-button {
     padding: 8px 16px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-.delete-button {
+.dialog-content .delete-button {
     background-color: #ff4d4f;
+    color: white;
 }
 
-.cancel-button {
+.dialog-content .cancel-button {
     background-color: #d9d9d9;
 }

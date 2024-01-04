@@ -8,11 +8,10 @@ export interface IMessageType {
 }
 export interface IMessageContextType {
 	messages: Array<IMessageType>;
-	status?: string;
 	isLoading: boolean;
 	isPostLoading: boolean;
 	messageDispatch?: Dispatch<IMessageDispatchType>;
-	isConfirmationDialogOpen:boolean,
+	isConfirmationDialogOpen: boolean;
 }
 export interface IMessageDispatchType {
 	type: string;

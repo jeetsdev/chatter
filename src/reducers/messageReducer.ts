@@ -14,15 +14,8 @@ export const messageReducer = (
 			return { ...state, isPostLoading: action.payload };
 		case "GET_MESSAGE_SUCCESS":
 			return { ...state, messages: action.payload };
-		case "GET_MESSAGE_FAILED":
-			return { ...state, status: "failed" };
 		case "POST_MESSAGE_SUCCESS":
 			return { ...state, messages: [...state.messages, action.payload] };
-		case "DELETE_MESSAGE_SUCCESS":
-			return {
-				...state,
-				messages: state.messages.splice(action.payload, 1),
-			};
 		case "SORT_MESSAGES":
 			return {
 				...state,
