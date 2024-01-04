@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+# React TypeScript Messaging App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the React TypeScript Messaging App! This application provides a simple messaging interface with various features, including posting messages, deleting individual messages, clearing all messages, sorting messages, and implementing pagination.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Installation](#installation)
+- [Feature](#feature)
 
-### `yarn start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To run this project locally, follow these steps:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Clone the repository
 
-### `yarn test`
+    ```js
+     git clone https://github.com/jeetsdev/chatter
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Navigate to the project folder
+    ```js
+    cd chatter
+    ```
+- Install dependencies
+    ```js
+    npm install
+    ```
+    OR
+    ```js
+    yarn
+    ```
 
-### `yarn build`
+## Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Start the development server: `npm start` OR `yarn start`
+- Open the app in your browser: `http://localhost:5000`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. Post Message
 
-### `yarn eject`
+Easily post messages using the user-friendly interface. Messages are displayed in real-time and can include text.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 2. Delete a Message
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Remove a specific message with a click of a Delete button.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 3. Delete All Messages
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Clear the entire message history when needed by clicking on Delete All.
 
-## Learn More
+### 4. Sort Messages
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Sort messages based on Recent or First Added.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 5. Pagination
+
+Handled large number of messages efficiently with pagination. Display a limited number of messages per page for improved performance.
