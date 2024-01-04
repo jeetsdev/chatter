@@ -19,9 +19,12 @@ export const MessageSection = () => {
 	return (
 		<div className="pagination-sec">
 			<div className="pagination-data">
-				{getCurrentPageData()?.map((message: IMessageType) => {
-					return <MessageCard message={message} key={message.id} />;
-				})}
+				{getCurrentPageData() &&
+					getCurrentPageData().map((message: IMessageType) => {
+						return (
+							<MessageCard message={message} key={message.id} />
+						);
+					})}
 			</div>
 			<div className="pagination-pages">
 				{Array.from({ length: totalPageCount }).map((_, ele) => {
