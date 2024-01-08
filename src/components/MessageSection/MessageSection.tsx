@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { useMessage } from "../../context/message_context";
 import { IMessageType } from "../../helpers/helpers";
 import { MessageCard } from "../components";
@@ -16,11 +16,13 @@ export const MessageSection = () => {
 		);
 	}, [messages, currentPageNo]);
 
+	const finalData = useMemo(() => getCurrentPageData(), [getCurrentPageData]);
+
 	return (
 		<div className="pagination-sec">
 			<div className="pagination-data">
-				{getCurrentPageData() &&
-					getCurrentPageData().map((message: IMessageType) => {
+				{finalData &&
+					finalData.map((message: IMessageType) => {
 						return (
 							<MessageCard message={message} key={message.id} />
 						);
